@@ -91,11 +91,11 @@ let commoditiesTracked: Security[] = [
 ]
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'home-page',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
-export class AppComponent {
+export class HomeComponent {
   title = 'frontend';
   stocks = stocksTracked;
   cryptoCoins = cryptoCoinsTracked;

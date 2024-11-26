@@ -1,0 +1,64 @@
+<style>
+    .stock-title {
+        width: 80vw;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 10px;
+    }
+    .stock-price {
+        width: 80vw;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .divider {
+        width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .table {
+        width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+<div class="content" role="main">
+    <h5 class="stock-title">{{cryptocurrencyCoinName}} ({{ tickerSymbol }})</h5>
+    <h1 class="stock-price">${{currentPrice.toLocaleString()}}</h1>
+    <h6 class="stock-title">{{priceAmountChange}} ({{pricePercentageChange}}%)</h6>
+    <hr class="divider" />
+    <table class="table stock-data-table">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr >
+            <td>Market Cap</td>
+            <td>${{ marketCap.toLocaleString() }}</td>
+          </tr>
+          <tr >
+            <td>Fully Diluted Market Cap</td>
+            <td>${{ fullyDilutedMarketCap.toLocaleString() }}</td>
+          </tr>
+          <tr >
+            <td>24 Hour Trading Volume</td>
+            <td>${{ twentyFourHourTradingVolume.toLocaleString() }}</td>
+          </tr>
+          <tr >
+            <td>Circulating Supply</td>
+            <td>${{ circulatingSupply.toLocaleString() }}</td>
+          </tr>
+          <tr >
+            <td>Total Supply</td>
+            <td>${{ totalSupply.toLocaleString() }}</td>
+          </tr>
+          <tr >
+            <td>Max Supply</td>
+            <td>{{ maxSupply != 0 ? "$" + maxSupply.toLocaleString() : "∞" }}</td>
+          </tr>
+      </tbody>
+    </table>
+</div>

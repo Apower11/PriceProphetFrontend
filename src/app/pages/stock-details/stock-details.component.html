@@ -1,0 +1,76 @@
+<style>
+    .stock-title {
+        width: 80vw;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 10px;
+    }
+    .stock-price {
+        width: 80vw;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .divider {
+        width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .table {
+        width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+<div class="content" role="main">
+    <h5 class="stock-title">{{stockName}} ({{ tickerSymbol }})</h5>
+    <h1 class="stock-price">${{currentPrice.toLocaleString()}}</h1>
+    <h6 class="stock-title">{{priceAmountChange}} ({{pricePercentageChange}}%)</h6>
+    <hr class="divider" />
+    <table class="table stock-data-table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr >
+              <td>Market Cap</td>
+              <td>{{ marketCap }}</td>
+            </tr>
+            <tr >
+                <td>EPS</td>
+                <td>{{ earningsPerShare }}</td>
+              </tr>
+            <tr>
+                <td>P/E Ratio</td>
+                <td>{{ convertToTwoDecimalPlaces(currentPrice / earningsPerShare) }}</td>
+            </tr>
+            <tr >
+                <td>High</td>
+                <td>{{ high }}</td>
+              </tr>
+              <tr >
+                <td>Low</td>
+                <td>{{ low }}</td>
+              </tr>
+              <tr >
+                <td>Open</td>
+                <td>{{ openPrice }}</td>
+              </tr>
+              <tr >
+                <td>Previous Close</td>
+                <td>{{ previousClosePrice }}</td>
+              </tr>
+              <tr >
+                <td>52-Week High</td>
+                <td>{{ fiftyTwoWeekHigh }}</td>
+              </tr>
+              <tr >
+                <td>52-Week Low</td>
+                <td>{{ fiftyTwoWeekLow }}</td>
+              </tr>
+        </tbody>
+      </table>
+</div>
